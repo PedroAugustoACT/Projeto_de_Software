@@ -21,8 +21,7 @@ public class CreateAccount{
 
         System.out.println("");
         
-        //ArrayList<Accounts> arrayOfAccounts = new ArrayList<>();
-        //arrayOfAccounts.add(new Accounts(a1.login, a1.password, a1.username));
+      
         a1.status();
 
         
