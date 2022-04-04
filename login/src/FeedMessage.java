@@ -15,10 +15,10 @@ public class FeedMessage {
 
     @Override
     public String toString() {
-        return "Feed{" +
-                "Mensagem='" + text + '\'' +
-                ", Remetente=" + sender +
-                '}';
+        return "Feed: " +
+                "Mensagem => '" + text + '\'' +
+                ", Remetente => " + sender
+                ;
     }
 }
 

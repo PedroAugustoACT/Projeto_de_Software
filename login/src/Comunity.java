@@ -24,11 +24,10 @@ public class Comunity {
     }
     @Override
     public String toString() {
-        return "Comunidade{" +
-                "Nome ='" + nameComunity + '\'' +
-                ", Descrição ='" + descriptionComunity + '\'' +
-                ", Dono =" + owner +
-                ", Membros =" + membersComunity +
-                '}';
+        return "Comunidade: " +
+                "Nome => '" + nameComunity + '\'' +
+                ", Descrição => '" + descriptionComunity + '\'' +
+                ", Dono => " + owner +
+                ", Membros => " + membersComunity;
     }
 }

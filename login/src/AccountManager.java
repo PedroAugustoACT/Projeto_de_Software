@@ -17,20 +17,23 @@ public class AccountManager {
         Account a1 = new Account("", "", "");
         
 
-        System.out.print("Digite seu login: ");
+        System.out.println("Digite seu login: ");
+        System.out.print("=> ");
         a1.login = myObj.next();
 
-        System.out.print("Digite sua senha: ");
+        System.out.println("Digite sua senha: ");
+        System.out.print("=> ");
         a1.password = myObj.next();
 
-        System.out.print("Digite seu username: ");
+        System.out.println("Digite seu username: ");
+        System.out.print("=> ");
         a1.username= myObj.next();
 
         System.out.println("");
 
         accounts.add(a1);
 
-        System.out.println("criada!");
+        System.out.println("Conta criada com sucesso!");
         System.out.println(a1);
         // for (Account account: accounts) {
         //     System.out.println(account);
@@ -41,8 +44,10 @@ public class AccountManager {
         System.out.println("Login");
         System.out.println("----------------");
         System.out.println("Digite o seu login: ");
+        System.out.print("=> ");
         String login = myObj.next();
         System.out.println("Digite a sua senha: ");
+        System.out.print("=> ");
         String password = myObj.next();
 
         for (Account account: accounts) {
@@ -63,6 +68,7 @@ public class AccountManager {
         System.out.println("Digite 1 para criar um novo atributo");
         System.out.println("Digite 2 para editar um atributo");
         System.out.println("Digite 3 para sair");
+        System.out.print("=> ");
 
         int v;
         v = myObj.nextInt();
@@ -72,9 +78,11 @@ public class AccountManager {
             System.out.println("Criar");
 
             System.out.println("Digite o nome do atributo: ");
+            System.out.print("=> ");
             String nameAtribute = myObj.next();
 
             System.out.println("Digite o valor do atributo: ");
+            System.out.print("=> ");
             String valueAtribute = myObj.next();
 
             Atribute newAtribute = new Atribute(nameAtribute, valueAtribute);
@@ -132,9 +140,11 @@ public class AccountManager {
 
     public void addComunity(Scanner myObj, Account account){
         System.out.println("Digite o nome da sua comunidade: ");
+        System.out.print("=> ");
         String name = myObj.next();
 
         System.out.println("Digite a descrição: ");
+        System.out.print("=> ");
         String description = myObj.next();
 
         Comunity newComunity= new Comunity(name, description, account);
@@ -149,6 +159,7 @@ public class AccountManager {
             System.out.println(comunity);
         }
         System.out.println("Qual comunidade deseja entrar?");
+        System.out.print("=> ");
         String pickComunity = myObj.next();
 
         for (Comunity comunity: comunities){
@@ -166,7 +177,8 @@ public class AccountManager {
                 System.out.println(currentAccount);
             }
         }
-        System.out.println("Digite o login de quem você deseja enviar?");
+        System.out.println("Digite o login de quem você deseja enviar:");
+        System.out.print("=> ");
         String pickProfile = myObj.next();
 
         for (Account currentAccount: accounts){
@@ -199,7 +211,8 @@ public class AccountManager {
             }
         }
 
-        System.out.print("Digite o login de quem você quer adicionar: ");
+        System.out.println("Digite o login de quem você quer adicionar: ");
+        System.out.print("=> ");
         String nameInvite = myObj.next();
 
         for (Account currentAccount: accounts) {
@@ -234,7 +247,8 @@ public class AccountManager {
                 System.out.println(invite);
             }
         }
-        System.out.print("Digite o login de quem deseja responder: ");
+        System.out.println("Digite o login de quem deseja responder:");
+        System.out.print("=> ");
         String nameInvite = myObj.next();
 
         for (Invite invite: account.invites) {
@@ -243,6 +257,7 @@ public class AccountManager {
                     break;
                 }
                 System.out.println("Digite 1 para aceitar e 2 para recusar");
+                System.out.print("=> ");
                 int responseInvite = myObj.nextInt();
                 if(responseInvite == 1){
                     account.invites.remove(invite);
@@ -267,6 +282,7 @@ public class AccountManager {
 
     public void sendFeed(Scanner myObj, Account account){
         System.out.println("Digite 1 para mandar a mensagem no feed de amigos e 2 para o feed geral");
+        System.out.print("=> ");
         int pickFeed = myObj.nextInt();
 
         System.out.print("Mensagem: ");
@@ -302,6 +318,7 @@ public class AccountManager {
     public boolean removeAccount(Scanner myObj, Account account){
 
         System.out.println("Digite 1 se quiser remover a sua conta, e 2 para voltar");
+        System.out.print("=> ");
         int feedbackUser = myObj.nextInt();
 
         if(feedbackUser == 1){
@@ -314,6 +331,7 @@ public class AccountManager {
     public void recoverAccount(Scanner myObj, Account account){
 
         System.out.println("Digite 1 se quiser recuperar a sua conta, e 2 para voltar");
+        System.out.print("=> ");
         int feedbackUser = myObj.nextInt();
 
         if(feedbackUser == 1){

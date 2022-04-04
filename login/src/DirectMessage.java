@@ -20,10 +20,9 @@ public class DirectMessage {
 
     @Override
     public String toString() {
-        return "Mensagem Diretas{" +
-                "Mensagen='" + text + '\'' +
-                ", Remetente=" + sender +
-                ", Destinatário=" + receiver +
-                '}';
+        return "Mensagem Diretas: " +
+                "Mensagem => '" + text + '\'' +
+                ", Remetente => " + sender +
+                ", Destinatário => " + receiver;
     }
 }

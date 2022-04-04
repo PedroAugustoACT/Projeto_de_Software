@@ -15,9 +15,8 @@ public class Invite {
 
     @Override
     public String toString() {
-        return "Convite{" +
-                "Remetente=" + sender +
-                ", Destinatário=" + receiver +
-                '}';
+        return "Convite: " +
+                "Remetente => " + sender +
+                ", Destinatário => " + receiver;
     }
 }

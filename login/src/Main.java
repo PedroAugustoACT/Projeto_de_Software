@@ -8,20 +8,22 @@ public class Main {
     public static void accountMenu(Scanner myObj, Account account, AccountManager editable){
 
         while(true){
+            System.out.println("IFace");
+            System.out.println("------------------------------");
             System.out.println("Pressione 1 para: Editar perfil");
             System.out.println("Pressione 2 para: Adicionar amigo");
             System.out.println("Pressione 3 para: Ver convites");
             System.out.println("Pressione 4 para: Enviar mensagem");
             System.out.println("Pressione 5 para: Criar comunidade");
-            System.out.println("Pressione 6 para: Adicionar membros na comunidade");
+            System.out.println("Pressione 6 para: Entrar em uma comunidade");
             System.out.println("Pressione 7 para: Listas minhas informações");
             System.out.println("Pressione 8 para: Remover conta");
             System.out.println("Pressione 9 para: Enviar mensagem no feed");
-            System.out.println("Pressione 10 para: Controle de feed");
-            System.out.println("Pressione 11 para: Ver lista de amigos");
-            System.out.println("Pressione 12 para: Ver mensagens diretas");
-            System.out.println("Pressione 13 para: Ver mensagens do feed");
-            System.out.println("Pressione 14 para: Logout");
+            System.out.println("Pressione 10 para: Ver lista de amigos");
+            System.out.println("Pressione 11 para: Ver mensagens diretas");
+            System.out.println("Pressione 12 para: Ver mensagens do feed");
+            System.out.println("Pressione 13 para: Logout");
+            System.out.print("=> ");
 
             int value = myObj.nextInt();
 
@@ -83,23 +85,19 @@ public class Main {
                 break;
 
                 case 10:
-
-                break;
-
-                case 11:
                     System.out.println(account.friends);
                 break;
 
-                case 12:
+                case 11:
                     System.out.println(account.messages);
                 break;
 
-                case 13:
+                case 12:
                     //System.out.println("Ver mensagens do feed");
                     System.out.println(account.messagesFeed);
                     System.out.println(account.messagesFriends);
                 break;
-                case 14:
+                case 13:
                 return;
 
                 default:
@@ -113,17 +111,16 @@ public class Main {
 
     public static void main (String[] args){
          Scanner myObj = new Scanner(System.in);
-
+         myObj.useDelimiter("\r?\n");
          AccountManager c1 = new AccountManager();
          //c1.create(myObj);
 
          int user_num;
 
-        System.out.println("entrou");
 
          while (true) {
     
-         System.out.println("MENU");
+         System.out.println("MENU IFace");
          System.out.println("--------------");
          System.out.println("Pressione 1 para: Adicionar conta");
          System.out.println("Pressione 2 para: Logar");
