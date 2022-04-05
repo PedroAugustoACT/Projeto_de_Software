@@ -5,7 +5,7 @@
 
 ### Como Rodar:
 - Utilizando a IDE IntelliJ.
-- Ou, utulizando a extensão "Extension Pack for Java", do VsCode
+- Ou, utilizando a extensão "Extension Pack for Java", do VsCode
 ## Funções:
 
 ### Criação de Conta :white_check_mark:
