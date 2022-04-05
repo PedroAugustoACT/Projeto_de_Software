@@ -2,6 +2,10 @@
 ## Projeto de Rede de Relacionamentos para a disciplina de Projeto de Software
 ------------------------------------------------------------------------------
 ### Aplicação feita totalmente em Java
+
+### Como Rodar:
+- Utilizando a IDE IntelliJ.
+- Ou, utulizando a extensão "Extension Pack for Java", do VsCode
 ## Funções:
 
 ### Criação de Conta
