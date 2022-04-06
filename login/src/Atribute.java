@@ -1,4 +1,4 @@
-package login.src;
+
 
 public class Atribute {
     String name;
