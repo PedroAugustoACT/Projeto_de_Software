@@ -4,8 +4,8 @@
 ### Aplicação feita totalmente em Java
 
 ### Como Rodar:
-- Utilizando a IDE IntelliJ.
-- Ou, utilizando a extensão "Extension Pack for Java", do VsCode
+1. javac Main.java
+2. java Main
 ## Funções:
 
 ### Criação de Conta :white_check_mark:
