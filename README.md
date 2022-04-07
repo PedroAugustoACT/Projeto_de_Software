@@ -33,7 +33,7 @@
 <br/>
 
 ### Remoção de Conta :white_check_mark:
-- O usuário pode, a qualquer momentos, encerrar sua conta no IFace.
+- O usuário pode, a qualquer momento, encerrar sua conta no IFace.
 <br/>
 
 ### Recuperação de Conta :white_check_mark:
