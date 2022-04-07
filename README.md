@@ -28,7 +28,7 @@
 - O usuário pode criar uma comunidade, adiconando um nome e uma descrição a ela.
 <br/>
 
-### Criação de Conta :white_check_mark:
+### Entrar em uma comunidade :white_check_mark:
 - O usuário pode entrar em uma comunidade já criada por outro usuário.
 <br/>
 
