@@ -1,4 +1,4 @@
-package login.src;
+
 
 import java.util.ArrayList;
 
@@ -24,10 +24,12 @@ public class Comunity {
     }
     @Override
     public String toString() {
-        return "Comunidade: " +
-                "Nome => '" + nameComunity + '\'' +
-                ", Descrição => '" + descriptionComunity + '\'' +
-                ", Dono => " + owner +
-                ", Membros => " + membersComunity;
+        return "----------------------------------------" + '\n' +
+                "Comunidade: " + '\n' +
+                "Nome => '" + nameComunity + '\n' +
+                "Descrição => '" + descriptionComunity + '\n' +
+                "Dono => " + owner + '\n' +
+                "Membros => " + membersComunity + '\n' +
+                "----------------------------------------";
     }
 }

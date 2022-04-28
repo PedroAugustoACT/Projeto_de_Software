@@ -1,4 +1,4 @@
-package login.src;
+
 
 public class FeedMessage {
     String text;
@@ -15,10 +15,12 @@ public class FeedMessage {
 
     @Override
     public String toString() {
-        return "Feed: " +
-                "Mensagem => '" + text + '\'' +
-                ", Remetente => " + sender
-                ;
+        return '\n' +
+                "----------------------------------------" + '\n' +
+                "Feed: " + '\n' +
+                "Mensagem => '" + text + '\n' +
+                "Remetente => " + sender + '\n' +
+                "----------------------------------------";
     }
 }
 

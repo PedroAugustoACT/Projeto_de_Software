@@ -1,4 +1,4 @@
-package login.src;
+
 
 public class Invite {
     Account sender;
@@ -15,8 +15,10 @@ public class Invite {
 
     @Override
     public String toString() {
-        return "Convite: " +
-                "Remetente => " + sender +
-                ", Destinatário => " + receiver;
+        return "----------------------------------------" + '\n' +
+                "Convite: " + '\n' +
+                "Remetente => " + sender + '\n' +
+                "Destinatário => " + receiver + '\n' +
+                "----------------------------------------";
     }
 }

@@ -1,4 +1,4 @@
-package login.src;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -301,7 +301,7 @@ public class AccountManager {
         }
         else if (pickFeed == 2){
             FeedMessage feedMessage = new FeedMessage(textMessage, account);
-            account.setMessageFeed(feedMessage);
+            /*account.setMessageFeed(feedMessage);*/
 
             for (Account currentAccount: accounts){
                 if(currentAccount.active){
@@ -355,7 +355,6 @@ public class AccountManager {
         for(Comunity comunity: comunities){
             if(comunity.owner.login.toUpperCase().equals(account.login.toUpperCase())){
                 System.out.println(comunity);
-                System.out.println("foi");
                 continue;
             }
             for(Account currentAccount: comunity.membersComunity){

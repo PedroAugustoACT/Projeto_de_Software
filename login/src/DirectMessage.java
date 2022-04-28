@@ -1,4 +1,4 @@
-package login.src;
+
 
 
 public class DirectMessage {
@@ -20,9 +20,11 @@ public class DirectMessage {
 
     @Override
     public String toString() {
-        return "Mensagem Diretas: " +
-                "Mensagem => '" + text + '\'' +
-                ", Remetente => " + sender +
-                ", Destinatário => " + receiver;
+        return "----------------------------------------" + '\n' +
+                "Mensagem Diretas: " + '\n' +
+                "Mensagem => '" + text + '\n' +
+                "Remetente => " + sender + '\n' +
+                "Destinatário => " + receiver + '\n' +
+                "----------------------------------------";
     }
 }
