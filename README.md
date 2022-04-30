@@ -4,8 +4,8 @@
 ### Aplicação feita totalmente em Java
 
 ### Como Rodar:
-- Utilizando a IDE IntelliJ.
-- Ou, utulizando a extensão "Extension Pack for Java", do VsCode
+1. javac Main.java
+2. java Main
 ## Funções:
 
 ### Criação de Conta :white_check_mark:
@@ -28,12 +28,12 @@
 - O usuário pode criar uma comunidade, adiconando um nome e uma descrição a ela.
 <br/>
 
-### Criação de Conta :white_check_mark:
+### Entrar em uma comunidade :white_check_mark:
 - O usuário pode entrar em uma comunidade já criada por outro usuário.
 <br/>
 
 ### Remoção de Conta :white_check_mark:
-- O usuário pode, a qualquer momentos, encerrar sua conta no IFace.
+- O usuário pode, a qualquer momento, encerrar sua conta no IFace.
 <br/>
 
 ### Recuperação de Conta :white_check_mark:
