@@ -3,6 +3,8 @@
 ------------------------------------------------------------------------------
 ### Aplicação feita totalmente em Java
 
+### Branch Main possui o código final refatorado
+### Branch v1.0 possui o código incial, antes de refatorar
 ### Como Rodar:
 1. javac Main.java
 2. java Main
