@@ -4,7 +4,7 @@
 ### Aplicação feita totalmente em Java
 
 ### Branch Main possui o código final refatorado
-- Até então, somente herança, classe abstrata e polimorfismo implementados
+- Herança, Classe Abstrata, Polimorfismo e Encapsulamento implementados :white_check_mark:
 ### Branch v1.0 possui o código incial, antes de refatorar
 ### Como Rodar:
 1. javac Main.java
