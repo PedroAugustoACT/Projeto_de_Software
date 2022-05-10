@@ -1,8 +1,8 @@
 
 
 public class Invite {
-    Account sender;
-    Account receiver;
+    public Account sender;
+    public Account receiver;
 
     public Invite() {
 

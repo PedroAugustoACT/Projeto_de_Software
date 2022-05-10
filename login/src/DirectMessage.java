@@ -1,7 +1,7 @@
 
 public class DirectMessage extends Message {
 
-    Account receiver;
+    public Account receiver;
 
 
     public DirectMessage(String text, Account sender, Account receiver) {
@@ -13,6 +13,7 @@ public class DirectMessage extends Message {
     public String toString() {
         return  super.toString()+
                 "Destinatário => " + receiver + '\n' +
+                "Mensagem Privada" + '\n' +
                 "----------------------------------------";
     }
 }

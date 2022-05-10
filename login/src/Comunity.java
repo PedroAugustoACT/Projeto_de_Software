@@ -7,20 +7,16 @@ public class Comunity {
     String descriptionComunity;
     Account owner;
 
-    ArrayList<Account> membersComunity;
+    ComunityMemberSet membersComunity;
 
-    public Comunity(){
 
-    }
-
-    public Comunity(String nameComunity, String descriptionComunity, Account owner) {
+    public Comunity(String nameComunity, String descriptionComunity, Account owner, ComunityMemberSet membersComunity) {
         this.nameComunity = nameComunity;
         this.descriptionComunity = descriptionComunity;
         this.owner = owner;
-        membersComunity = new ArrayList<Account>();
+        this.membersComunity = membersComunity;
     }
-    public void setMember(Account account){
-        membersComunity.add(account);
+    public void setMember(Account account){ this.membersComunity.addMember(account);
     }
     @Override
     public String toString() {
@@ -29,7 +25,7 @@ public class Comunity {
                 "Nome => '" + nameComunity + '\n' +
                 "Descrição => '" + descriptionComunity + '\n' +
                 "Dono => " + owner + '\n' +
-                "Membros => " + membersComunity + '\n' +
+                "Membros => " + membersComunity.getAllMembers() + '\n' +
                 "----------------------------------------";
     }
 }

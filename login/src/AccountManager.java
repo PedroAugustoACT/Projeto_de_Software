@@ -147,7 +147,7 @@ public class AccountManager {
         System.out.print("=> ");
         String description = myObj.next();
 
-        Comunity newComunity= new Comunity(name, description, account);
+        Comunity newComunity= new Comunity(name, description, account, new ComunityMemberSetArrayList());
 
         comunities.add(newComunity);
 
@@ -357,7 +357,7 @@ public class AccountManager {
                 System.out.println(comunity);
                 continue;
             }
-            for(Account currentAccount: comunity.membersComunity){
+            for(Account currentAccount: comunity.membersComunity.getAllMembers()){
                 if (currentAccount.login.toUpperCase().equals(account.login.toUpperCase())){
                     if(!comunity.owner.active){
                         break;

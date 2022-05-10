@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public abstract class Message {
     public String text;
-    Account sender;
+    public Account sender;
 
     public Message() {
     }
@@ -15,7 +15,6 @@ public abstract class Message {
     @Override
     public String toString() {
         return "----------------------------------------" + '\n' +
-                "Mensagem Diretas: " + '\n' +
                 "Mensagem => '" + text + '\n' +
                 "Remetente => " + sender + '\n'
                 ;
