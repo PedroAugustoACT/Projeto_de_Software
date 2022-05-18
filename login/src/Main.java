@@ -30,13 +30,25 @@ public class Main {
 
                 case 1:
                 System.out.println("EDITAR/CRIAR ATRIBUTO");
-                editable.managerPerfil(myObj, account);
+                
+                try{
+                    editable.managerPerfil(myObj, account);
+                }
+                catch(Exception nullAtribute){
+                    System.out.println(nullAtribute.getMessage());
+                }
 
                 break;
 
                 case 2:
                     System.out.println("ADICIONAR AMIGO");
-                    editable.sendInvite(myObj, account);
+                    try{
+                        editable.sendInvite(myObj, account);
+                    }
+                    catch(Exception nullFriend){
+                        System.out.println(nullFriend.getMessage());
+                    }
+                    
                 break;
 
                 case 3:
@@ -137,19 +149,22 @@ public class Main {
              break;
 
              case 2:
-                  System.out.println("Logar");
+                    System.out.println("Logar");
                   Account account;
                   account = c1.login(myObj);
-                  if(account != null && account.active == true){
-                      accountMenu(myObj, account, c1);
+                  try{
+                        if(account.active == true){
+                        accountMenu(myObj, account, c1);
+                        }
+                    else if(account.active == false){
+                        System.out.println("Conta removida!");
+                        c1.recoverAccount(myObj, account);
+                    }
                   }
-                  else if(account.active == false){
-                      System.out.println("Conta removida!");
-                      c1.recoverAccount(myObj, account);
+                  catch(NullPointerException errorNUllAccount){
+                    System.out.println("Usuário ou senha inválidos");
                   }
-                  else{
-                      System.out.println("Usuário ou senha inválidos");
-                  }
+                  
 
              break;
 

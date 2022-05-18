@@ -35,9 +35,6 @@ public class AccountManager {
 
         System.out.println("Conta criada com sucesso!");
         System.out.println(a1);
-        // for (Account account: accounts) {
-        //     System.out.println(account);
-        // }
     }
 
     public Account login(Scanner myObj){
@@ -63,7 +60,7 @@ public class AccountManager {
 
     }
 
-    public void managerPerfil(Scanner myObj, Account account){
+    public void managerPerfil(Scanner myObj, Account account)throws Exception{
 
         System.out.println("Digite 1 para criar um novo atributo");
         System.out.println("Digite 2 para editar um atributo");
@@ -109,18 +106,22 @@ public class AccountManager {
             if(editableAtribute.toUpperCase().equals("LOGIN")){
                 account.login = editableValue;
             }
-            else if (editableAtribute.toUpperCase().equals("SENHA")){
-                account.password = editableValue;
-            } 
             else if (editableAtribute.toUpperCase().equals("USER")){
                 account.username = editableValue;
             }
             else{
+                boolean atributeExists = false;
                 for (Atribute atribute: account.atributes){
                     if(atribute.name.toUpperCase().equals(editableAtribute.toUpperCase())){
                         atribute.value = editableValue;
+                        atributeExists = true;
                     }
                 }
+                if (atributeExists = true){
+                    throw new ExceptionAtribute("DIGITE UM ATRIBUTO VÁLIDO!");
+                }
+                
+                
             }
 
             break;
@@ -204,7 +205,7 @@ public class AccountManager {
 
     }
 
-    public void sendInvite(Scanner myObj, Account account){
+    public void sendInvite(Scanner myObj, Account account)throws Exception{
         for (Account currentAccount: accounts){
             if(currentAccount.active){
                 System.out.println(currentAccount);
@@ -218,16 +219,14 @@ public class AccountManager {
         for (Account currentAccount: accounts) {
             if (currentAccount.login.toUpperCase().equals(nameInvite.toUpperCase())) {
                 if (!currentAccount.active) {
-                    break;
+                    throw new ExceptionAddFriend("CONTA INATIVA!");
                 }
                 if (currentAccount.login.toUpperCase().equals(account.login.toUpperCase())) {
-                    System.out.println("VOCÊ NÃO PODE SE ADICIONAR COMO AMIGO");
-                    return;
+                    throw new ExceptionAddFriend("VOCÊ NÃO PODE SE ADICIONAR COMO AMIGO");
                 }
                 for (Account friend : account.friends) {
                     if (currentAccount.login.toUpperCase().equals(friend.login.toUpperCase())) {
-                        System.out.println("AMIGO JÁ ADICIONADO");
-                        return;
+                        throw new ExceptionAddFriend("AMIGO JÁ ADICIONADO");
                     }
                 }
 
