@@ -1,5 +1,6 @@
 
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class AccountManager {
@@ -70,70 +71,76 @@ public class AccountManager {
         int v;
         v = myObj.nextInt();
 
-        switch (v){
-            case 1:
-            System.out.println("Criar");
+        try {
+            switch (v){
 
-            System.out.println("Digite o nome do atributo: ");
-            System.out.print("=> ");
-            String nameAtribute = myObj.next();
-
-            System.out.println("Digite o valor do atributo: ");
-            System.out.print("=> ");
-            String valueAtribute = myObj.next();
-
-            Atribute newAtribute = new Atribute(nameAtribute, valueAtribute);
-
-            account.setAtribute(newAtribute);
-
-            break;
-
-            case 2:
-            System.out.println("Editar");
-            System.out.println("Lista de atributos:");
-            System.out.println(account);
-           
-            for (Atribute atribute: account.atributes){
-                System.out.println(atribute.name + ": " + atribute.value);
-            }
-
-            System.out.print("Digite o nome do atributo para editar: ");
-            String editableAtribute = myObj.next();
-
-            System.out.print("Digite o novo valor do atributo: ");
-            String editableValue = myObj.next();
-
-            if(editableAtribute.toUpperCase().equals("LOGIN")){
-                account.login = editableValue;
-            }
-            else if (editableAtribute.toUpperCase().equals("USER")){
-                account.username = editableValue;
-            }
-            else{
-                boolean atributeExists = false;
+                case 1:
+                System.out.println("Criar");
+    
+                System.out.println("Digite o nome do atributo: ");
+                System.out.print("=> ");
+                String nameAtribute = myObj.next();
+    
+                System.out.println("Digite o valor do atributo: ");
+                System.out.print("=> ");
+                String valueAtribute = myObj.next();
+    
+                Atribute newAtribute = new Atribute(nameAtribute, valueAtribute);
+    
+                account.setAtribute(newAtribute);
+    
+                break;
+    
+                case 2:
+                System.out.println("Editar");
+                System.out.println("Lista de atributos:");
+                System.out.println(account);
+               
                 for (Atribute atribute: account.atributes){
-                    if(atribute.name.toUpperCase().equals(editableAtribute.toUpperCase())){
-                        atribute.value = editableValue;
-                        atributeExists = true;
+                    System.out.println(atribute.name + ": " + atribute.value);
+                }
+    
+                System.out.print("Digite o nome do atributo para editar: ");
+                String editableAtribute = myObj.next();
+    
+                System.out.print("Digite o novo valor do atributo: ");
+                String editableValue = myObj.next();
+    
+                if(editableAtribute.toUpperCase().equals("LOGIN")){
+                    account.login = editableValue;
+                }
+                else if (editableAtribute.toUpperCase().equals("USER")){
+                    account.username = editableValue;
+                }
+                else{
+                    boolean atributeExists = false;
+                    for (Atribute atribute: account.atributes){
+                        if(atribute.name.toUpperCase().equals(editableAtribute.toUpperCase())){
+                            atribute.value = editableValue;
+                            atributeExists = true;
+                        }
                     }
+                    if (atributeExists = true){
+                        throw new ExceptionAtribute("DIGITE UM ATRIBUTO VÁLIDO!");
+                    }
+                    
+                    
                 }
-                if (atributeExists = true){
-                    throw new ExceptionAtribute("DIGITE UM ATRIBUTO VÁLIDO!");
-                }
-                
-                
+    
+                break;
+    
+                case 3:
+                System.out.println("ENCERRANDO");
+                return;
+    
+    
+                default:
+                System.out.println("Digite um número válido");
             }
-
-            break;
-
-            case 3:
-            System.out.println("ENCERRANDO");
-            return;
-
-
-            default:
-            System.out.println("Digite um número válido");
+        } catch (InputMismatchException e) {
+            System.out.println("Ops... você digitou caracteres. Precisamos que digite apenas números.");
         }
+        
 
         
 
