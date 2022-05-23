@@ -1,6 +1,5 @@
 
 import java.util.ArrayList;
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class AccountManager {
@@ -71,76 +70,70 @@ public class AccountManager {
         int v;
         v = myObj.nextInt();
 
-        try {
-            switch (v){
+        switch (v){
+            case 1:
+            System.out.println("Criar");
 
-                case 1:
-                System.out.println("Criar");
-    
-                System.out.println("Digite o nome do atributo: ");
-                System.out.print("=> ");
-                String nameAtribute = myObj.next();
-    
-                System.out.println("Digite o valor do atributo: ");
-                System.out.print("=> ");
-                String valueAtribute = myObj.next();
-    
-                Atribute newAtribute = new Atribute(nameAtribute, valueAtribute);
-    
-                account.setAtribute(newAtribute);
-    
-                break;
-    
-                case 2:
-                System.out.println("Editar");
-                System.out.println("Lista de atributos:");
-                System.out.println(account);
-               
-                for (Atribute atribute: account.atributes){
-                    System.out.println(atribute.name + ": " + atribute.value);
-                }
-    
-                System.out.print("Digite o nome do atributo para editar: ");
-                String editableAtribute = myObj.next();
-    
-                System.out.print("Digite o novo valor do atributo: ");
-                String editableValue = myObj.next();
-    
-                if(editableAtribute.toUpperCase().equals("LOGIN")){
-                    account.login = editableValue;
-                }
-                else if (editableAtribute.toUpperCase().equals("USER")){
-                    account.username = editableValue;
-                }
-                else{
-                    boolean atributeExists = false;
-                    for (Atribute atribute: account.atributes){
-                        if(atribute.name.toUpperCase().equals(editableAtribute.toUpperCase())){
-                            atribute.value = editableValue;
-                            atributeExists = true;
-                        }
-                    }
-                    if (atributeExists = true){
-                        throw new ExceptionAtribute("DIGITE UM ATRIBUTO VÁLIDO!");
-                    }
-                    
-                    
-                }
-    
-                break;
-    
-                case 3:
-                System.out.println("ENCERRANDO");
-                return;
-    
-    
-                default:
-                System.out.println("Digite um número válido");
+            System.out.println("Digite o nome do atributo: ");
+            System.out.print("=> ");
+            String nameAtribute = myObj.next();
+
+            System.out.println("Digite o valor do atributo: ");
+            System.out.print("=> ");
+            String valueAtribute = myObj.next();
+
+            Atribute newAtribute = new Atribute(nameAtribute, valueAtribute);
+
+            account.setAtribute(newAtribute);
+
+            break;
+
+            case 2:
+            System.out.println("Editar");
+            System.out.println("Lista de atributos:");
+            System.out.println(account);
+           
+            for (Atribute atribute: account.atributes){
+                System.out.println(atribute.name + ": " + atribute.value);
             }
-        } catch (InputMismatchException e) {
-            System.out.println("Ops... você digitou caracteres. Precisamos que digite apenas números.");
+
+            System.out.print("Digite o nome do atributo para editar: ");
+            String editableAtribute = myObj.next();
+
+            System.out.print("Digite o novo valor do atributo: ");
+            String editableValue = myObj.next();
+
+            if(editableAtribute.toUpperCase().equals("LOGIN")){
+                account.login = editableValue;
+            }
+            else if (editableAtribute.toUpperCase().equals("USER")){
+                account.username = editableValue;
+            }
+            else{
+                boolean atributeExists = false;
+                for (Atribute atribute: account.atributes){
+                    if(atribute.name.toUpperCase().equals(editableAtribute.toUpperCase())){
+                        atribute.value = editableValue;
+                        atributeExists = true;
+                    }
+                }
+                if (atributeExists = true){
+                    throw new ExceptionAtribute("DIGITE UM ATRIBUTO VÁLIDO!");
+                }
+                
+                
+            }
+
+            break;
+
+            case 3:
+            System.out.println("ENCERRANDO");
+            return;
+
+
+            default:
+            System.out.println("Digite um número válido");
         }
-        
 
         
 
@@ -243,7 +236,7 @@ public class AccountManager {
                 return;
             }
         }
-        System.out.println("ERRO!");
+        System.out.println("DIGITE UM LOGIN VÁLIDO");
     }
 
     public void answerInvite(Scanner myObj, Account account){
@@ -283,7 +276,7 @@ public class AccountManager {
                 }
             }
         }
-        System.out.println("ERRO!");
+        System.out.println("NÃO FOI ENCONTRADO CONVITE COM ESSE LOGIN!");
     }
 
     public void sendFeed(Scanner myObj, Account account){
