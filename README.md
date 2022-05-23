@@ -6,6 +6,8 @@
 ### Branch Main possui o código final refatorado
 - Herança, Classe Abstrata, Polimorfismo e Encapsulamento implementados :white_check_mark:
 ### Branch v1.0 possui o código incial, antes de refatorar
+### Branch v1.1 possui o código refatorado
+### Branch v1.2 possui o código com exceptions
 ### Como Rodar:
 1. javac Main.java
 2. java Main
