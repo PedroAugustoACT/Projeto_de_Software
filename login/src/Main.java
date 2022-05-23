@@ -1,12 +1,13 @@
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 // import login.src.Account;
 // import login.src.AccountManager;
 
 public class Main {
-    public static void accountMenu(Scanner myObj, Account account, AccountManager editable){
+    public static void accountMenu(Scanner myObj, Account account, AccountManager editable) {
 
-        while(true){
+        while (true) {
             System.out.println("IFace");
             System.out.println("------------------------------");
             System.out.println("Pressione 1 para: Editar perfil");
@@ -24,162 +25,168 @@ public class Main {
             System.out.println("Pressione 13 para: Logout");
             System.out.print("=> ");
 
-            int value = myObj.nextInt();
+            try {
+                int value = myObj.nextInt();
+                switch (value) {
 
-            switch (value){
+                    case 1:
+                        System.out.println("EDITAR/CRIAR ATRIBUTO");
 
-                case 1:
-                System.out.println("EDITAR/CRIAR ATRIBUTO");
-                
-                try{
-                    editable.managerPerfil(myObj, account);
-                }
-                catch(Exception nullAtribute){
-                    System.out.println(nullAtribute.getMessage());
-                }
+                        try {
+                            editable.managerPerfil(myObj, account);
+                        } catch (InputMismatchException e) {
+                            System.out.println("DIGITE UM NÚMERO VÁLIDO");
+                        } catch (ExceptionAtribute nullAtribute) {
+                            System.out.println(nullAtribute.getMessage());
+                        } finally {
+                            myObj.nextLine();
+                        }
 
-                break;
+                        break;
 
-                case 2:
-                    System.out.println("ADICIONAR AMIGO");
-                    try{
-                        editable.sendInvite(myObj, account);
-                    }
-                    catch(Exception nullFriend){
-                        System.out.println(nullFriend.getMessage());
-                    }
-                    
-                break;
+                    case 2:
+                        System.out.println("ADICIONAR AMIGO");
+                        try {
+                            editable.sendInvite(myObj, account);
+                        } catch (Exception nullFriend) {
+                            System.out.println(nullFriend.getMessage());
+                        }
 
-                case 3:
-                    System.out.println("VER CONVITES");
-                    editable.answerInvite(myObj, account);
-                break;
+                        break;
 
-                case 4:
-                    System.out.println("ENVIAR MENSAGEM");
-                    editable.sendMessage(myObj, account);
-                break;
+                    case 3:
+                        System.out.println("VER CONVITES");
+                        editable.answerInvite(myObj, account);
+                        break;
 
-                case 5:
+                    case 4:
+                        System.out.println("ENVIAR MENSAGEM");
+                        editable.sendMessage(myObj, account);
+                        break;
 
-                    System.out.println("CRIAR COMUNIDADE");
+                    case 5:
 
-                    editable.addComunity(myObj, account);
-                break;
+                        System.out.println("CRIAR COMUNIDADE");
 
-                case 6:
+                        editable.addComunity(myObj, account);
+                        break;
 
-                    System.out.println("Entrar em uma comunidade");
+                    case 6:
 
-                    editable.addMember(myObj, account);
-                break;
+                        System.out.println("Entrar em uma comunidade");
 
-                case 7:
-                    System.out.println("Listar informações");
+                        editable.addMember(myObj, account);
+                        break;
 
-                    editable.listInformations(myObj, account);
-                break;
+                    case 7:
+                        System.out.println("Listar informações");
 
-                case 8:
-                    System.out.println("Remover sua conta");
+                        editable.listInformations(myObj, account);
+                        break;
 
-                    if(editable.removeAccount(myObj, account)){
+                    case 8:
+                        System.out.println("Remover sua conta");
+
+                        if (editable.removeAccount(myObj, account)) {
+                            return;
+                        }
+
+                        break;
+
+                    case 9:
+                        System.out.println("Enviar mensagem no feed");
+                        editable.sendFeed(myObj, account);
+                        break;
+
+                    case 10:
+                        System.out.println(account.friends);
+                        break;
+
+                    case 11:
+                        System.out.println(account.messages);
+                        break;
+
+                    case 12:
+
+                        System.out.println(account.messagesFeed);
+                        System.out.println(account.messagesFriends);
+                        break;
+                    case 13:
                         return;
-                    }
 
-                break;
-
-                case 9:
-                    System.out.println("Enviar mensagem no feed");
-                    editable.sendFeed(myObj, account);
-                break;
-
-                case 10:
-                    System.out.println(account.friends);
-                break;
-
-                case 11:
-                    System.out.println(account.messages);
-                break;
-
-                case 12:
-                    //System.out.println("Ver mensagens do feed");
-                    System.out.println(account.messagesFeed);
-                    System.out.println(account.messagesFriends);
-                break;
-                case 13:
-                return;
-
-                default:
-                    System.out.println("Por favor, digite um número válido");
+                    default:
+                        System.out.println("Por favor, digite um número válido");
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("DIGITE UM NÚMERO VÁLIDO");
+            } finally {
+                myObj.nextLine();
             }
 
         }
-        
+
     }
 
+    public static void main(String[] args) {
+        Scanner myObj = new Scanner(System.in);
+        myObj.useDelimiter("\r?\n");
+        AccountManager c1 = new AccountManager();
+        // c1.create(myObj);
 
-    public static void main (String[] args){
-         Scanner myObj = new Scanner(System.in);
-         myObj.useDelimiter("\r?\n");
-         AccountManager c1 = new AccountManager();
-         //c1.create(myObj);
+        int user_num;
 
-         int user_num;
+        while (true) {
 
+            System.out.println("MENU IFace");
+            System.out.println("--------------");
+            System.out.println("Pressione 1 para: Adicionar conta");
+            System.out.println("Pressione 2 para: Logar");
+            System.out.println("Pressione 3 para: Sair");
 
-         while (true) {
-    
-         System.out.println("MENU IFace");
-         System.out.println("--------------");
-         System.out.println("Pressione 1 para: Adicionar conta");
-         System.out.println("Pressione 2 para: Logar");
-         System.out.println("Pressione 3 para: Sair");
+            System.out.print("Sua escolha: ");
 
-         System.out.print("Sua escolha: ");
-         user_num = myObj.nextInt();
+            try {
+                user_num = myObj.nextInt();
+                switch (user_num) {
 
-         switch (user_num) {
+                    case 1:
 
-             case 1:
+                        System.out.println("Adicionar conta");
+                        c1.create(myObj);
+                        break;
 
-                 System.out.println("Adicionar conta");
-                 c1.create(myObj);
-             break;
-
-             case 2:
-                    System.out.println("Logar");
-                  Account account;
-                  account = c1.login(myObj);
-                  try{
-                        if(account.active == true){
-                        accountMenu(myObj, account, c1);
+                    case 2:
+                        System.out.println("Logar");
+                        Account account;
+                        account = c1.login(myObj);
+                        try {
+                            if (account.active == true) {
+                                accountMenu(myObj, account, c1);
+                            } else if (account.active == false) {
+                                System.out.println("Conta removida!");
+                                c1.recoverAccount(myObj, account);
+                            }
+                        } catch (NullPointerException errorNUllAccount) {
+                            System.out.println("Usuário ou senha inválidos");
                         }
-                    else if(account.active == false){
-                        System.out.println("Conta removida!");
-                        c1.recoverAccount(myObj, account);
-                    }
-                  }
-                  catch(NullPointerException errorNUllAccount){
-                    System.out.println("Usuário ou senha inválidos");
-                  }
-                  
 
-             break;
+                        break;
 
-             case 3:
-                 System.out.println("ENCERRANDO");
-                 return;
+                    case 3:
+                        System.out.println("ENCERRANDO");
+                        return;
 
-             default:
+                    default:
 
-             System.out.println("Por favor, digite um número válido");
+                        System.out.println("Por favor, digite um número válido");
 
-             break;
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("DIGITE UM NÚMERO VÁLIDO");
+            } finally {
+                myObj.nextLine();
+            }
 
-
-         }
-         }
+        }
     }
 }

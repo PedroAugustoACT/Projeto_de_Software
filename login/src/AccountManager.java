@@ -1,5 +1,6 @@
 
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class AccountManager {
@@ -60,7 +61,7 @@ public class AccountManager {
 
     }
 
-    public void managerPerfil(Scanner myObj, Account account)throws Exception{
+    public void managerPerfil(Scanner myObj, Account account)throws InputMismatchException, ExceptionAtribute{
 
         System.out.println("Digite 1 para criar um novo atributo");
         System.out.println("Digite 2 para editar um atributo");
@@ -110,7 +111,7 @@ public class AccountManager {
                 account.username = editableValue;
             }
             else{
-                boolean atributeExists = false;
+                 boolean atributeExists = false;
                 for (Atribute atribute: account.atributes){
                     if(atribute.name.toUpperCase().equals(editableAtribute.toUpperCase())){
                         atribute.value = editableValue;
