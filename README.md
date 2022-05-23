@@ -3,8 +3,6 @@
 ------------------------------------------------------------------------------
 ### Aplicação feita totalmente em Java
 
-### Branch Main possui o código final refatorado
-- Herança, Classe Abstrata, Polimorfismo e Encapsulamento implementados :white_check_mark:
 ### Branch v1.0 possui o código incial
 ### Branch v1.1 possui o código refatorado
 ### Branch v1.2 possui o código com exceptions
