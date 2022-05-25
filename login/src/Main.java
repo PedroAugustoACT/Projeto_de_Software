@@ -115,7 +115,7 @@ public class Main {
                         return;
 
                     default:
-                        System.out.println("Por favor, digite um número válido");
+                        System.out.println("DIGITE UM NÚMERO VÁLIDO");
                 }
             } catch (InputMismatchException e) {
                 System.out.println("DIGITE UM NÚMERO VÁLIDO");
@@ -178,7 +178,7 @@ public class Main {
 
                     default:
 
-                        System.out.println("Por favor, digite um número válido");
+                        System.out.println("DIGITE UM NÚMERO VÁLIDO");
 
                 }
             } catch (InputMismatchException e) {
