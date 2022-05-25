@@ -23,8 +23,10 @@
 <br/>
 
 #### 5. Na função de adicionar amigo, ao tentar adicionar um conta já amiga, o usuário cairá na catch de "ExceptionAddFriend" e retornará ao menu com uma mensagem.
+<br/>
 
 #### 6. Na função de adicionar amigo, ao tentar adicionar um login inexistente, o usuário cairá na catch de "ExceptionLogin" e retornará ao menu com uma mensagem.
+<br/>
 
 #### 7. Na função de entrar em uma comunidade, ao tentar entrar em uma comunidade inexistente, o usuário cairá na catch de "ExceptionComunity" e retornará ao menu com uma mensagem.
 
