@@ -3,11 +3,27 @@
 ------------------------------------------------------------------------------
 ### Aplicação feita totalmente em Java
 
-### Branch Main possui o código final refatorado
-- Herança, Classe Abstrata, Polimorfismo e Encapsulamento implementados :white_check_mark:
+### Branch Main possui o código refatorado
+
 ### Branch v1.0 possui o código incial, antes de refatorar
 ### Branch v1.1 possui o código refatorado
-### Branch v1.2 possui o código com exceptions
+- Herança, Classe Abstrata, Polimorfismo e Encapsulamento implementados :white_check_mark:
+### Branch v1.2 possui o código com exceptions:
+
+#### 1. Todos os menus tratadados da exception "InputMismatchException", usuário só poderá se digitar um int válido
+<br/>
+
+#### 2. Na função de criar/editar atributo, ao escolher editar atributo, caso o usuário digite um nome de atributo inexistente, ele cairá no catch de "ExceptionAtribute" e retornará ao menu com uma mensagem.
+<br/>
+
+#### 3. Na função de adicionar amigo, ao tentar adicionar a si mesmo, o usuário cairá na catch de "ExceptionAddFriend" e retornará ao menu com uma mensagem.
+<br/>
+
+#### 4. Na função de adicionar amigo, ao tentar adicionar um conta initiva, o usuário cairá na catch de "ExceptionAddFriend" e retornará ao menu com uma mensagem.
+<br/>
+
+#### 5. Na função de adicionar amigo, ao tentar adicionar um conta já amiga, o usuário cairá na catch de "ExceptionAddFriend" e retornará ao menu com uma mensagem.
+
 ### Como Rodar:
 1. javac Main.java
 2. java Main
