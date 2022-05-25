@@ -140,7 +140,7 @@ public class AccountManager {
 
     }
 
-    public void addComunity(Scanner myObj, Account account){
+    public void addComunity(Scanner myObj, Account account) {
         System.out.println("Digite o nome da sua comunidade: ");
         System.out.print("=> ");
         String name = myObj.next();
@@ -156,24 +156,28 @@ public class AccountManager {
         System.out.println(newComunity);
     }
 
-    public void addMember(Scanner myObj, Account account){
+    public void addMember(Scanner myObj, Account account)throws ExceptionComunity{
         for (Comunity comunity: comunities){
             System.out.println(comunity);
         }
         System.out.println("Qual comunidade deseja entrar?");
         System.out.print("=> ");
         String pickComunity = myObj.next();
-
+        boolean comunityExists =  false;
         for (Comunity comunity: comunities){
             if(comunity.nameComunity.toUpperCase().equals(pickComunity.toUpperCase())){
                 comunity.setMember(account);
+                comunityExists =  true;
                 return;
             }
         }
-        System.out.println("Digite uma comunidade válida");
+        if(comunityExists = true){
+            throw new ExceptionComunity("DIGITE UMA COMUNIDADE VÁLIDA");
+        }
+    
     }
 
-    public void sendMessage(Scanner myObj, Account account){
+    public void sendMessage(Scanner myObj, Account account) throws ExceptionLogin{
         for (Account currentAccount: accounts){
             if (currentAccount.active) {
                 System.out.println(currentAccount);
@@ -182,31 +186,37 @@ public class AccountManager {
         System.out.println("Digite o login de quem você deseja enviar:");
         System.out.print("=> ");
         String pickProfile = myObj.next();
-
+        boolean loginExists2 = false;
         for (Account currentAccount: accounts){
 
             if(currentAccount.login.toUpperCase().equals(pickProfile.toUpperCase())) {
                 if (!currentAccount.active) {
+                    loginExists2 = true;
                     break;
                 }
+                else{
+                    System.out.print("Mensagem: ");
+                    String currentMessage = myObj.next();
+        
+                    DirectMessage newMessage = new DirectMessage(currentMessage, account, currentAccount);
+        
+                    loginExists2 = true;
+                    account.setMessage(newMessage);
+                    currentAccount.setMessage(newMessage);
+                    System.out.println(newMessage);
+                    return;
 
-                System.out.print("Mensagem: ");
-                String currentMessage = myObj.next();
-
-                DirectMessage newMessage = new DirectMessage(currentMessage, account, currentAccount);
-
-                account.setMessage(newMessage);
-                currentAccount.setMessage(newMessage);
-                System.out.println(newMessage);
-                return;
+                }
             }
         }
-        System.out.println("ERRO!");
+        if(loginExists2 = false){
+            throw new ExceptionLogin("DIGITE UM LOGIN VÁLIDO");
+        }
 
 
     }
 
-    public void sendInvite(Scanner myObj, Account account)throws Exception{
+    public void sendInvite(Scanner myObj, Account account)throws Exception, ExceptionLogin{
         for (Account currentAccount: accounts){
             if(currentAccount.active){
                 System.out.println(currentAccount);
@@ -216,7 +226,7 @@ public class AccountManager {
         System.out.println("Digite o login de quem você quer adicionar: ");
         System.out.print("=> ");
         String nameInvite = myObj.next();
-
+        boolean loginExists =  false;
         for (Account currentAccount: accounts) {
             if (currentAccount.login.toUpperCase().equals(nameInvite.toUpperCase())) {
                 if (!currentAccount.active) {
@@ -236,8 +246,11 @@ public class AccountManager {
 
                 return;
             }
+            else
+                loginExists = true;
         }
-        System.out.println("DIGITE UM LOGIN VÁLIDO");
+        if(loginExists = true)
+        throw new ExceptionLogin("DIGITE UM LOGIN VÁLIDO");
     }
 
     public void answerInvite(Scanner myObj, Account account){

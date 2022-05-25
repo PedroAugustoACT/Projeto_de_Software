@@ -48,9 +48,14 @@ public class Main {
                         System.out.println("ADICIONAR AMIGO");
                         try {
                             editable.sendInvite(myObj, account);
-                        } catch (Exception nullFriend) {
+                        }
+                        catch(ExceptionLogin nullLogin){
+                            System.out.println(nullLogin.getMessage());
+                        }
+                        catch (Exception nullFriend) {
                             System.out.println(nullFriend.getMessage());
                         }
+                        
 
                         break;
 
@@ -61,8 +66,13 @@ public class Main {
 
                     case 4:
                         System.out.println("ENVIAR MENSAGEM");
-                        editable.sendMessage(myObj, account);
-                        break;
+                        try {
+                            editable.sendMessage(myObj, account);
+                            break;
+                            
+                        } catch (ExceptionLogin nullLogin) {
+                            System.out.println(nullLogin.getMessage());
+                        }
 
                     case 5:
 
@@ -74,9 +84,13 @@ public class Main {
                     case 6:
 
                         System.out.println("Entrar em uma comunidade");
-
-                        editable.addMember(myObj, account);
-                        break;
+                        try {
+                            editable.addMember(myObj, account);
+                            break;
+                        } catch (ExceptionComunity nullComunity) {
+                            System.out.println(nullComunity.getMessage());
+                        }
+                        
 
                     case 7:
                         System.out.println("Listar informações");
