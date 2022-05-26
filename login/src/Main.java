@@ -212,7 +212,6 @@ public class Main {
                 System.out.println("DIGITE UM NÚMERO VÁLIDO");
             } catch (NoSuchElementException e){
                 System.out.println("3, ENCERRANDO");
-                return;
             }finally {
                 myObj.nextLine();
             }
