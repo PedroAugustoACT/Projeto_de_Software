@@ -8,42 +8,32 @@
 ### Branch v1.0 possui o código incial, antes de refatorar
 ### Branch v1.1 possui o código refatorado
 - Herança, Classe Abstrata, Polimorfismo e Encapsulamento implementados :white_check_mark:
+
 ### Branch v1.2 possui o código com exceptions:
 
-#### 1. Todos os menus tratadados da exception "InputMismatchException", usuário só poderá se digitar um int válido
-<br/>
+- 1. Todos os menus tratadados da exception "InputMismatchException", usuário só poderá se digitar um int válido
 
-#### 2. Na função de criar perfil , caso o usuário digite um login fora do formato de email "example@email.com", ou com espaço entre caracterees, ou um login já existente, ele cairá no catch de "ExceptionLoginUser" e retornará ao menu com uma mensagem.
-<br/>
+- 2. Na função de criar perfil , caso o usuário digite um login fora do formato de email "example@email.com", ou com espaço entre caracteres, ou um login já existente, ele cairá no catch de "ExceptionLoginUser" e retornará ao menu com uma mensagem.
 
-#### 3. Na função de criar perfil , caso o usuário digite uma senha com 5 dígitos ou menos ou com espaço entre os dígitos, ele cairá no catch de "ExceptionLoginUser" e retornará ao menu com uma mensagem.
-<br/>
+- 3. Na função de criar perfil , caso o usuário digite uma senha com 5 dígitos ou menos ou com espaço entre os dígitos, ele cairá no catch de "ExceptionLoginUser" e retornará ao menu com uma mensagem.
 
-#### 4. Na função de criar perfil , caso o usuário digite um username com um ou mais números, ele cairá no catch de "ExceptionLoginUser" e retornará ao menu com uma mensagem.
-<br/>
+- 4. Na função de criar perfil , caso o usuário digite um username com um ou mais números, ele cairá no catch de "ExceptionLoginUser" e retornará ao menu com uma mensagem.
 
-#### 5. Na função de criar/editar atributo, ao escolher editar atributo, caso o usuário digite um nome de atributo inexistente, ele cairá no catch de "ExceptionAtribute" e retornará ao menu com uma mensagem.
-<br/>
+- 5. Na função de criar/editar atributo, ao escolher editar atributo, caso o usuário digite um nome de atributo inexistente, ele cairá no catch de "ExceptionAtribute" e retornará ao menu com uma mensagem.
 
-#### 6. Na função de enviar mensagem direta, ao digitar um usuário inexistente, o usuário cairá no catch de "ExceptionAtribute" e retornará ao menu com uma mensagem.
-<br/>
+- 6. Na função de enviar mensagem direta, ao digitar um usuário inexistente, o usuário cairá no catch de "ExceptionAtribute" e retornará ao menu com uma mensagem.
 
-#### 7. Na função de adicionar amigo, ao tentar adicionar a si mesmo, o usuário cairá na catch de "ExceptionAddFriend" e retornará ao menu com uma mensagem.
-<br/>
+- 7. Na função de adicionar amigo, ao tentar adicionar a si mesmo, o usuário cairá na catch de "ExceptionAddFriend" e retornará ao menu com uma mensagem.
 
-#### 8. Na função de adicionar amigo, ao tentar adicionar um conta inativa, o usuário cairá na catch de "ExceptionAddFriend" e retornará ao menu com uma mensagem.
-<br/>
+- 8. Na função de adicionar amigo, ao tentar adicionar um conta inativa, o usuário cairá na catch de "ExceptionAddFriend" e retornará ao menu com uma mensagem.
 
-#### 9. Na função de adicionar amigo, ao tentar adicionar um conta já amiga, o usuário cairá na catch de "ExceptionAddFriend" e retornará ao menu com uma mensagem.
-<br/>
+- 9. Na função de adicionar amigo, ao tentar adicionar um conta já amiga, o usuário cairá na catch de "ExceptionAddFriend" e retornará ao menu com uma mensagem.
 
-#### 10. Na função de adicionar amigo, ao tentar adicionar um login inexistente, o usuário cairá na catch de "ExceptionLogin" e retornará ao menu com uma mensagem.
-<br/>
+- 10. Na função de adicionar amigo, ao tentar adicionar um login inexistente, o usuário cairá na catch de "ExceptionLogin" e retornará ao menu com uma mensagem.
 
-#### 11. Na função de adicionar amigo, ao tentar responder um convite de um login inexistente, o usuário cairá na catch de "ExceptionLogin" e retornará ao menu com uma mensagem.
-<br/>
+- 11. Na função de adicionar amigo, ao tentar responder um convite de um login inexistente, o usuário cairá na catch de "ExceptionLogin" e retornará ao menu com uma mensagem.
 
-#### 12. Na função de entrar em uma comunidade, ao tentar entrar em uma comunidade inexistente, o usuário cairá na catch de "ExceptionComunity" e retornará ao menu com uma mensagem.
+- 12. Na função de entrar em uma comunidade, ao tentar entrar em uma comunidade inexistente, o usuário cairá na catch de "ExceptionComunity" e retornará ao menu com uma mensagem.
 
 ### Como Rodar:
 1. javac Main.java
