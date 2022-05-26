@@ -46,7 +46,6 @@ public class AccountManager {
         System.out.println("Digite seu username: ");
         System.out.print("=> ");
         a1.username= myObj.next();
-        //boolean error = a1.username.matches("/[0-9]+/");
         if(!a1.username.matches("[\\p{L}\\s]+")){
             throw new ExceptionLoginUser("DIGITE UM USERNAME VÁLIDO (SEM NÚMEROS)");
         }
@@ -342,7 +341,7 @@ public class AccountManager {
         }
         else if (pickFeed == 2){
             FeedMessage feedMessage = new FeedMessage(textMessage, account);
-            /*account.setMessageFeed(feedMessage);*/
+            
 
             for (Account currentAccount: accounts){
                 if(currentAccount.active){
