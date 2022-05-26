@@ -1,5 +1,6 @@
 
 import java.util.InputMismatchException;
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 // import login.src.Account;
 // import login.src.AccountManager;
@@ -209,7 +210,10 @@ public class Main {
                 }
             } catch (InputMismatchException e) {
                 System.out.println("DIGITE UM NÚMERO VÁLIDO");
-            } finally {
+            } catch (NoSuchElementException e){
+                System.out.println("3, ENCERRANDO");
+                return;
+            }finally {
                 myObj.nextLine();
             }
 
