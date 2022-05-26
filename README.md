@@ -16,19 +16,25 @@
 #### 2. Na função de criar/editar atributo, ao escolher editar atributo, caso o usuário digite um nome de atributo inexistente, ele cairá no catch de "ExceptionAtribute" e retornará ao menu com uma mensagem.
 <br/>
 
-#### 3. Na função de adicionar amigo, ao tentar adicionar a si mesmo, o usuário cairá na catch de "ExceptionAddFriend" e retornará ao menu com uma mensagem.
+#### 3. Na função de enviar mensagem direta, ao digitar um usuário inexistente, o usuário cairá no catch de "ExceptionAtribute" e retornará ao menu com uma mensagem.
 <br/>
 
-#### 4. Na função de adicionar amigo, ao tentar adicionar um conta initiva, o usuário cairá na catch de "ExceptionAddFriend" e retornará ao menu com uma mensagem.
+#### 4. Na função de adicionar amigo, ao tentar adicionar a si mesmo, o usuário cairá na catch de "ExceptionAddFriend" e retornará ao menu com uma mensagem.
 <br/>
 
-#### 5. Na função de adicionar amigo, ao tentar adicionar um conta já amiga, o usuário cairá na catch de "ExceptionAddFriend" e retornará ao menu com uma mensagem.
+#### 5. Na função de adicionar amigo, ao tentar adicionar um conta inativa, o usuário cairá na catch de "ExceptionAddFriend" e retornará ao menu com uma mensagem.
 <br/>
 
-#### 6. Na função de adicionar amigo, ao tentar adicionar um login inexistente, o usuário cairá na catch de "ExceptionLogin" e retornará ao menu com uma mensagem.
+#### 6. Na função de adicionar amigo, ao tentar adicionar um conta já amiga, o usuário cairá na catch de "ExceptionAddFriend" e retornará ao menu com uma mensagem.
 <br/>
 
-#### 7. Na função de entrar em uma comunidade, ao tentar entrar em uma comunidade inexistente, o usuário cairá na catch de "ExceptionComunity" e retornará ao menu com uma mensagem.
+#### 7. Na função de adicionar amigo, ao tentar adicionar um login inexistente, o usuário cairá na catch de "ExceptionLogin" e retornará ao menu com uma mensagem.
+<br/>
+
+#### 8. Na função de adicionar amigo, ao tentar responder um convite de um login inexistente, o usuário cairá na catch de "ExceptionLogin" e retornará ao menu com uma mensagem.
+<br/>
+
+#### 9. Na função de entrar em uma comunidade, ao tentar entrar em uma comunidade inexistente, o usuário cairá na catch de "ExceptionComunity" e retornará ao menu com uma mensagem.
 
 ### Como Rodar:
 1. javac Main.java
