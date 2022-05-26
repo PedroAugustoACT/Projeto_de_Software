@@ -172,7 +172,13 @@ public class Main {
                     case 1:
 
                         System.out.println("Adicionar conta");
-                        c1.create(myObj);
+                        try {
+                            c1.create(myObj);
+                            break;
+                            
+                        } catch (ExceptionLoginUser containsSpace) {
+                            System.out.println(containsSpace.getMessage());
+                        }
                         break;
 
                     case 2:

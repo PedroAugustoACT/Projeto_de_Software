@@ -13,7 +13,7 @@ public class AccountManager {
         comunities = new ArrayList<Comunity>();
     }
     
-    public void create(Scanner myObj) {
+    public void create(Scanner myObj) throws ExceptionLoginUser {
         
         Account a1 = new Account("", "", "");
         
@@ -21,15 +21,24 @@ public class AccountManager {
         System.out.println("Digite seu login: ");
         System.out.print("=> ");
         a1.login = myObj.next();
+        if(a1.login.contains(" ")){
+            throw new ExceptionLoginUser("DIGITE UM LOGIN VÁLIDO");
+        }
 
         System.out.println("Digite sua senha: ");
         System.out.print("=> ");
         a1.password = myObj.next();
+        if(a1.password.contains(" ")){
+            throw new ExceptionLoginUser("DIGITE UMA SENHA VÁLIDA");
+        }
 
         System.out.println("Digite seu username: ");
         System.out.print("=> ");
         a1.username= myObj.next();
-
+        //boolean error = a1.username.contains("[0-9]");
+        if(a1.username.contains("[0-9]")){
+            throw new ExceptionLoginUser("DIGITE UM USERNAME VÁLIDO");
+        }
         System.out.println("");
 
         accounts.add(a1);
