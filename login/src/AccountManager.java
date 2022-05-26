@@ -187,11 +187,12 @@ public class AccountManager {
         System.out.print("=> ");
         String pickProfile = myObj.next();
         boolean loginExists2 = false;
+
         for (Account currentAccount: accounts){
 
             if(currentAccount.login.toUpperCase().equals(pickProfile.toUpperCase())) {
                 if (!currentAccount.active) {
-                    loginExists2 = true;
+                    loginExists2 = false;
                     break;
                 }
                 else{
@@ -209,7 +210,7 @@ public class AccountManager {
                 }
             }
         }
-        if(loginExists2 = false){
+        if(loginExists2 = true){
             throw new ExceptionLogin("DIGITE UM LOGIN VÁLIDO");
         }
 
@@ -253,7 +254,7 @@ public class AccountManager {
         throw new ExceptionLogin("DIGITE UM LOGIN VÁLIDO");
     }
 
-    public void answerInvite(Scanner myObj, Account account){
+    public void answerInvite(Scanner myObj, Account account) throws ExceptionLogin{
 
         for (Invite invite: account.invites){
             if(invite.sender.active){
@@ -263,10 +264,12 @@ public class AccountManager {
         System.out.println("Digite o login de quem deseja responder:");
         System.out.print("=> ");
         String nameInvite = myObj.next();
+        boolean loginExists = false;
 
         for (Invite invite: account.invites) {
             if (invite.sender.login.toUpperCase().equals(nameInvite.toUpperCase())) {
                 if(!invite.sender.active){
+                    loginExists = true;
                     break;
                 }
                 System.out.println("Digite 1 para aceitar e 2 para recusar");
@@ -290,7 +293,12 @@ public class AccountManager {
                 }
             }
         }
-        System.out.println("NÃO FOI ENCONTRADO CONVITE COM ESSE LOGIN!");
+        if(loginExists = true){
+            throw new ExceptionLogin("DIGITE UM LOGIN VÁLIDO343!");
+            
+        }
+        
+        
     }
 
     public void sendFeed(Scanner myObj, Account account){

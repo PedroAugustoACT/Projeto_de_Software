@@ -61,18 +61,24 @@ public class Main {
 
                     case 3:
                         System.out.println("VER CONVITES");
-                        editable.answerInvite(myObj, account);
+                        try{
+                            editable.answerInvite(myObj, account);
+                            break;
+                        }
+                        catch(ExceptionLogin nullLogin){
+                            System.out.println(nullLogin.getMessage());
+                        }
                         break;
 
                     case 4:
                         System.out.println("ENVIAR MENSAGEM");
                         try {
                             editable.sendMessage(myObj, account);
-                            break;
                             
                         } catch (ExceptionLogin nullLogin) {
                             System.out.println(nullLogin.getMessage());
                         }
+                        break;
 
                     case 5:
 
