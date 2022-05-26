@@ -22,21 +22,24 @@ public class AccountManager {
         System.out.print("=> ");
         a1.login = myObj.next();
         if(a1.login.contains(" ")){
-            throw new ExceptionLoginUser("DIGITE UM LOGIN VÁLIDO");
+            throw new ExceptionLoginUser("DIGITE UM LOGIN VÁLIDO (SEM ESPAÇOS)");
+        }
+        else if(!a1.login.contains("@") | !a1.login.contains(".com")){
+            throw new ExceptionLoginUser("DIGITE UM LOGIN VÁLIDO (Ex. fulano@gmail.com)");
         }
 
         System.out.println("Digite sua senha: ");
         System.out.print("=> ");
         a1.password = myObj.next();
         if(a1.password.contains(" ")){
-            throw new ExceptionLoginUser("DIGITE UMA SENHA VÁLIDA");
+            throw new ExceptionLoginUser("DIGITE UMA SENHA VÁLIDA (SEM ESPAÇOS)");
         }
 
         System.out.println("Digite seu username: ");
         System.out.print("=> ");
         a1.username= myObj.next();
-        //boolean error = a1.username.contains("[0-9]");
-        if(a1.username.contains("[0-9]")){
+        //boolean error = a1.username.matches("/[0-9]+/");
+        if(a1.username.matches("^\\d+$")){
             throw new ExceptionLoginUser("DIGITE UM USERNAME VÁLIDO");
         }
         System.out.println("");
