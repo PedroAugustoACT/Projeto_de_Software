@@ -27,6 +27,11 @@ public class AccountManager {
         else if(!a1.login.contains("@") | !a1.login.contains(".com")){
             throw new ExceptionLoginUser("DIGITE UM LOGIN VÁLIDO (Ex. fulano@gmail.com)");
         }
+        for (Account account: accounts) {
+            if(account.login.equals(a1.login)){
+                throw new ExceptionLoginUser("JÁ EXISTE UMA CONTA COM ESSE LOGIN"); 
+            }
+        }
 
         System.out.println("Digite sua senha: ");
         System.out.print("=> ");
@@ -34,13 +39,16 @@ public class AccountManager {
         if(a1.password.contains(" ")){
             throw new ExceptionLoginUser("DIGITE UMA SENHA VÁLIDA (SEM ESPAÇOS)");
         }
+        else if(a1.password.length()< 5){
+            throw new ExceptionLoginUser("SUA SENHA DEVE TER 6 OU MAIS DÍGITOS");
+        }
 
         System.out.println("Digite seu username: ");
         System.out.print("=> ");
         a1.username= myObj.next();
         //boolean error = a1.username.matches("/[0-9]+/");
-        if(a1.username.matches("^\\d+$")){
-            throw new ExceptionLoginUser("DIGITE UM USERNAME VÁLIDO");
+        if(!a1.username.matches("[\\p{L}\\s]+")){
+            throw new ExceptionLoginUser("DIGITE UM USERNAME VÁLIDO (SEM NÚMEROS)");
         }
         System.out.println("");
 

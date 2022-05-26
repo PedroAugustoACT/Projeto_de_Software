@@ -4,5 +4,4 @@ public class ExceptionLoginUser extends Exception {
             super(message);
     }
 
-
 }
