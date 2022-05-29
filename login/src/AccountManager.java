@@ -21,12 +21,11 @@ public class AccountManager {
         System.out.println("Digite seu login: ");
         System.out.print("=> ");
         a1.login = myObj.next();
-        if(a1.login.contains(" ")){
-            throw new ExceptionLoginUser("DIGITE UM LOGIN VÁLIDO (SEM ESPAÇOS)");
-        }
-        else if(!a1.login.contains("@") | !a1.login.contains(".com")){
+       
+        if(!a1.login.matches("^[\\w!#$%&'*+/=?`{|}~^-]+(?:\\.[\\w!#$%&'*+/=?`{|}~^-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$")){
             throw new ExceptionLoginUser("DIGITE UM LOGIN VÁLIDO (Ex. fulano@gmail.com)");
         }
+
         for (Account account: accounts) {
             if(account.login.equals(a1.login)){
                 throw new ExceptionLoginUser("JÁ EXISTE UMA CONTA COM ESSE LOGIN"); 
@@ -47,7 +46,7 @@ public class AccountManager {
         System.out.print("=> ");
         a1.username= myObj.next();
         if(!a1.username.matches("[\\p{L}\\s]+")){
-            throw new ExceptionLoginUser("DIGITE UM USERNAME VÁLIDO (SEM NÚMEROS)");
+            throw new ExceptionLoginUser("DIGITE UM USERNAME VÁLIDO (SEM NÚMEROS OU CARACTERES)");
         }
         System.out.println("");
 
