@@ -2,6 +2,8 @@
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class AccountManager {
     ArrayList<Account> accounts;
@@ -46,7 +48,7 @@ public class AccountManager {
         System.out.print("=> ");
         a1.username= myObj.next();
         if(!a1.username.matches("[\\p{L}\\s]+")){
-            throw new ExceptionLoginUser("DIGITE UM USERNAME VÁLIDO (SEM NÚMEROS OU CARACTERES)");
+            throw new ExceptionLoginUser("DIGITE UM USERNAME VÁLIDO (SEM NÚMEROS, ACENTOS OU CARACTERES ESPECIAIS)");
         }
         System.out.println("");
 
