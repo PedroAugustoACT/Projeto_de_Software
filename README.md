@@ -13,11 +13,11 @@
 
 - 1. Todos os menus tratadados da exception "InputMismatchException", usuário só poderá se digitar um int válido
 
-- 2. Na função de criar perfil , caso o usuário digite um login fora do formato de email "example@email.com", ou com espaço entre caracteres, ou um login já existente, ele cairá no catch de "ExceptionLoginUser" e retornará ao menu com uma mensagem.
+- 2. Na função de criar perfil, caso o usuário digite um login fora do formato de email "example@email.com", ou com espaço entre caracteres, ou um login já existente, ele cairá no catch de "ExceptionLoginUser" e retornará ao menu com uma mensagem.
 
-- 3. Na função de criar perfil , caso o usuário digite uma senha com 5 dígitos ou menos ou com espaço entre os dígitos, ele cairá no catch de "ExceptionLoginUser" e retornará ao menu com uma mensagem.
+- 3. Na função de criar perfil, caso o usuário digite uma senha com 5 dígitos ou menos ou com espaço entre os dígitos, ele cairá no catch de "ExceptionLoginUser" e retornará ao menu com uma mensagem.
 
-- 4. Na função de criar perfil , caso o usuário digite um username com um ou mais números, ele cairá no catch de "ExceptionLoginUser" e retornará ao menu com uma mensagem.
+- 4. Na função de criar perfil, caso o usuário digite um username com um ou mais números, com acentos ou com caracteres especiais, ele cairá no catch de "ExceptionLoginUser" e retornará ao menu com uma mensagem.
 
 - 5. Na função de criar/editar atributo, ao escolher editar atributo, caso o usuário digite um nome de atributo inexistente, ele cairá no catch de "ExceptionAtribute" e retornará ao menu com uma mensagem.
 
