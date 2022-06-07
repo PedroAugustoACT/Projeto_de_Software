@@ -1,7 +1,13 @@
 # IFace
 ## Projeto de Rede de Relacionamentos para a disciplina de Projeto de Software
 ------------------------------------------------------------------------------
-### Aplicação feita totalmente em Java
+#### Aplicação feita totalmente em Java
+
+## Code Smells
+- Long Method: Classes Main e AcountManager possuem muitos métodos os quais possuem inputs e outputs, e, além disso, lidam com regras de negócio.
+- Large Class: AccountManager com muitas obrigações foro da escopo inicial.
+- Feature Envy: Alguns métodos do AccountManager possuem atribitos de outras classes, como nas listagens de perfil.
+- Divergent Changes: Classes Atribute e Message possuem informações que, uma vez alteradas, mudam e danificam todo o resto do código.
 
 ### Branch Main possui o código refatorado
 
