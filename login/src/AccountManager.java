@@ -2,8 +2,6 @@
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class AccountManager {
     ArrayList<Account> accounts;
@@ -212,7 +210,6 @@ public class AccountManager {
 
             if(currentAccount.login.toUpperCase().equals(pickProfile.toUpperCase())) {
                 if (!currentAccount.active) {
-                    loginExists2 = false;
                     break;
                 }
                 else{

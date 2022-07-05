@@ -1,11 +1,8 @@
-import java.util.ArrayList;
 
 public abstract class Message {
     public String text;
     public Account sender;
 
-    public Message() {
-    }
 
     public Message(String text, Account sender) {
         this.text = text;

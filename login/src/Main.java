@@ -2,8 +2,6 @@
 import java.util.InputMismatchException;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
-// import login.src.Account;
-// import login.src.AccountManager;
 
 public class Main {
     public static void accountMenu(Scanner myObj, Account account, AccountManager editable) {
@@ -152,7 +150,6 @@ public class Main {
         Scanner myObj = new Scanner(System.in);
         myObj.useDelimiter("\r?\n");
         AccountManager c1 = new AccountManager();
-        // c1.create(myObj);
 
         int user_num;
 
