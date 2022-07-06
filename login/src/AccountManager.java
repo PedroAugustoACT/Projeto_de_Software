@@ -311,7 +311,7 @@ public class AccountManager {
             }
         }
         if(loginExists = true){
-            throw new ExceptionLogin("DIGITE UM LOGIN VÁLIDO343!");
+            throw new ExceptionLogin("DIGITE UM LOGIN VÁLIDO!");
             
         }
         
