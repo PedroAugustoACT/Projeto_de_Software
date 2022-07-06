@@ -3,10 +3,10 @@ import java.util.Scanner;
 
 public class InvokerCommandMenu {
 
-    ArrayList<CommandMenuInterface> commands;
+    ArrayList<CommandMenuParent> commands;
 
     public InvokerCommandMenu() {
-        commands = new ArrayList<CommandMenuInterface>();
+        commands = new ArrayList<CommandMenuParent>();
 
         commands.add(new CommandManagerPerfil()) ;
         commands.add(new CommandSendInvite());

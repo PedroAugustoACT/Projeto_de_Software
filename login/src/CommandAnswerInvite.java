@@ -1,6 +1,10 @@
 import java.util.Scanner;
 
-public class CommandAnswerInvite  implements CommandMenuInterface{
+public class CommandAnswerInvite  extends CommandMenuParent{
+    public CommandAnswerInvite(){
+        super.name = "Ver convites";
+        super.number = 3;
+    }
 
     @Override
     public void execute(Scanner myObj, Account account, AccountManager editable){

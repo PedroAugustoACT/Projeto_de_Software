@@ -1,7 +1,12 @@
 
 import java.util.Scanner;
 
-public class CommandSendInvite implements CommandMenuInterface {
+public class CommandSendInvite extends CommandMenuParent {
+    public CommandSendInvite(){
+        super.name = "Adicionar amigo";
+        super.number = 2;
+    }
+
 
     @Override
     public void execute(Scanner myObj, Account account, AccountManager editable){

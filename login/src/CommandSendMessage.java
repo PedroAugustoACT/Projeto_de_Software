@@ -1,6 +1,10 @@
 import java.util.Scanner;
 
-public class CommandSendMessage implements CommandMenuInterface {
+public class CommandSendMessage extends CommandMenuParent {
+    public CommandSendMessage(){
+        super.name = "Enviar mensagem";
+        super.number = 4;
+    }
 
     @Override
     public void execute(Scanner myObj, Account account, AccountManager editable){

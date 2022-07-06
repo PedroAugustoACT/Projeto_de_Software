@@ -1,6 +1,5 @@
 import java.util.InputMismatchException;
 import java.util.Scanner;
-import java.util.ArrayList;
 
 
 
@@ -27,13 +26,3 @@ public class CommandManagerPerfil extends CommandMenuParent {
    
     
 }
-
-ArrayList<CommandMenuParent> commands = new ArrayList<CommandMenuParent>();
-for (CommandMenuParent command : commands) {
-    System.out.println("Pressione " + command.number + " para: " + command.name);
-}
-
-// LEITURA
-Integer chosenNumber = 1;
-
-// VERIFICAR
