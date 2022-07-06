@@ -3,7 +3,7 @@
 ------------------------------------------------------------------------------
 #### Aplicação feita totalmente em Java
 
-## Design Patterns
+## Design Patterns aplicados
 - Command: Menu de funções retirado do arquivo Main e realocado para os arquivos Command, utilizando a classe abstrata CommandMenuParent
 - Generative Speculation: Retirada de trechos de código desnecessários
   - AccountManager: linhas 5 e 6, retirada de imports sem uso.
@@ -19,7 +19,7 @@
 ### Branch v1.0 possui o código incial, antes de refatorar
 ### Branch v1.1 possui o código refatorado
 - Herança, Classe Abstrata, Polimorfismo e Encapsulamento implementados :white_check_mark:
-
+### Branch v1.2 possui listagens de smells
 
 
 ### Como Rodar:
