@@ -5,9 +5,10 @@
 
 ## Design Patterns aplicados
 - Command: Menu de funções retirado do arquivo Main e realocado para os arquivos Command, utilizando a classe abstrata CommandMenuParent
+- Extract Method: Métodos createAtribute e editAtribute extraídos do método managerPerfil, na class AccountManager
 - Generative Speculation: Retirada de trechos de código desnecessários
   - AccountManager: linhas 5 e 6, retirada de imports sem uso.
-  - AccountManager: linhas 212, retirada variável sem uso.
+  - AccountManager: linha 212, retirada variável sem uso.
   - Comunity: linha 3, retirada de import sem uso.
   - Message: linha linha 1, retirada de import sem uso.
   - Main: linhas 5 e 6, retirada de imports sem uso.
