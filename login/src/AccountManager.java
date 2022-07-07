@@ -13,49 +13,6 @@ public class AccountManager {
         comunities = new ArrayList<Comunity>();
     }
     
-    public void create(Scanner myObj) throws ExceptionLoginUser {
-        
-        Account a1 = new Account("", "", "");
-        
-
-        System.out.println("Digite seu login: ");
-        System.out.print("=> ");
-        a1.login = myObj.next();
-       
-        if(!a1.login.matches("^[\\w!#$%&'*+/=?`{|}~^-]+(?:\\.[\\w!#$%&'*+/=?`{|}~^-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$")){
-            throw new ExceptionLoginUser("DIGITE UM LOGIN VÁLIDO (Ex. fulano@gmail.com)");
-        }
-
-        for (Account account: accounts) {
-            if(account.login.equals(a1.login)){
-                throw new ExceptionLoginUser("JÁ EXISTE UMA CONTA COM ESSE LOGIN"); 
-            }
-        }
-
-        System.out.println("Digite sua senha: ");
-        System.out.print("=> ");
-        a1.password = myObj.next();
-        if(a1.password.contains(" ")){
-            throw new ExceptionLoginUser("DIGITE UMA SENHA VÁLIDA (SEM ESPAÇOS)");
-        }
-        else if(a1.password.length()< 5){
-            throw new ExceptionLoginUser("SUA SENHA DEVE TER 6 OU MAIS DÍGITOS");
-        }
-
-        System.out.println("Digite seu username: ");
-        System.out.print("=> ");
-        a1.username= myObj.next();
-        if(!a1.username.matches("[\\p{L}\\s]+")){
-            throw new ExceptionLoginUser("DIGITE UM USERNAME VÁLIDO (SEM NÚMEROS, ACENTOS OU CARACTERES ESPECIAIS)");
-        }
-        System.out.println("");
-
-        accounts.add(a1);
-
-        System.out.println("Conta criada com sucesso!");
-        System.out.println(a1);
-    }
-
     public Account login(Scanner myObj){
         System.out.println("Login");
         System.out.println("----------------");
@@ -79,19 +36,8 @@ public class AccountManager {
 
     }
 
-    public void managerPerfil(Scanner myObj, Account account)throws InputMismatchException, ExceptionAtribute{
-
-        System.out.println("Digite 1 para criar um novo atributo");
-        System.out.println("Digite 2 para editar um atributo");
-        System.out.println("Digite 3 para sair");
-        System.out.print("=> ");
-
-        int v;
-        v = myObj.nextInt();
-
-        switch (v){
-            case 1:
-            System.out.println("Criar");
+    public void createAtribute(Scanner myObj, Account account){
+        System.out.println("Criar");
 
             System.out.println("Digite o nome do atributo: ");
             System.out.print("=> ");
@@ -105,10 +51,10 @@ public class AccountManager {
 
             account.setAtribute(newAtribute);
 
-            break;
+    }
 
-            case 2:
-            System.out.println("Editar");
+    public void editAtribute(Scanner myObj, Account account)throws InputMismatchException, ExceptionAtribute{
+        System.out.println("Editar");
             System.out.println("Lista de atributos:");
             System.out.println(account);
            
@@ -134,6 +80,7 @@ public class AccountManager {
                     if(atribute.name.toUpperCase().equals(editableAtribute.toUpperCase())){
                         atribute.value = editableValue;
                         atributeExists = true;
+                        return;
                     }
                 }
                 if (atributeExists = true){
@@ -143,6 +90,25 @@ public class AccountManager {
                 
             }
 
+    }
+
+    public void managerPerfil(Scanner myObj, Account account)throws InputMismatchException, ExceptionAtribute{
+
+        System.out.println("Digite 1 para criar um novo atributo");
+        System.out.println("Digite 2 para editar um atributo");
+        System.out.println("Digite 3 para sair");
+        System.out.print("=> ");
+
+        int v;
+        v = myObj.nextInt();
+
+        switch (v){
+            case 1:
+            createAtribute(myObj, account);
+            break;
+
+            case 2:
+            editAtribute(myObj, account);
             break;
 
             case 3:

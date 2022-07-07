@@ -57,7 +57,45 @@ public class Main {
 
                         System.out.println("Adicionar conta");
                         try {
-                            c1.create(myObj);
+                            Account a1 = new Account("", "", "");
+                            
+                            
+                            System.out.println("Digite seu login: ");
+                            System.out.print("=> ");
+                            a1.login = myObj.next();
+                            
+                            if(!a1.login.matches("^[\\w!#$%&'*+/=?`{|}~^-]+(?:\\.[\\w!#$%&'*+/=?`{|}~^-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$")){
+                                throw new ExceptionLoginUser("DIGITE UM LOGIN VÁLIDO (Ex. fulano@gmail.com)");
+                            }
+                            
+                            for (Account account1: c1.accounts) {
+                                if(account1.login.equals(a1.login)){
+                                    throw new ExceptionLoginUser("JÁ EXISTE UMA CONTA COM ESSE LOGIN"); 
+                                }
+                            }
+                            
+                            System.out.println("Digite sua senha: ");
+                            System.out.print("=> ");
+                            a1.password = myObj.next();
+                            if(a1.password.contains(" ")){
+                                throw new ExceptionLoginUser("DIGITE UMA SENHA VÁLIDA (SEM ESPAÇOS)");
+                            }
+                            else if(a1.password.length()< 5){
+                                throw new ExceptionLoginUser("SUA SENHA DEVE TER 6 OU MAIS DÍGITOS");
+                            }
+                            
+                            System.out.println("Digite seu username: ");
+                            System.out.print("=> ");
+                            a1.username= myObj.next();
+                            if(!a1.username.matches("[\\p{L}\\s]+")){
+                                throw new ExceptionLoginUser("DIGITE UM USERNAME VÁLIDO (SEM NÚMEROS, ACENTOS OU CARACTERES ESPECIAIS)");
+                            }
+                            System.out.println("");
+                            
+                            c1.accounts.add(a1);
+                            
+                            System.out.println("Conta criada com sucesso!");
+                            System.out.println(a1);
                             break;
                             
                         } catch (ExceptionLoginUser containsSpace) {
